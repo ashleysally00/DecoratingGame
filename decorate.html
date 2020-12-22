@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///Users/ashleyrice/Desktop/gamePieces/FACEMASKGAME3(2).htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+
+<div id="pic1" style="position: absolute; top: 50px; left: 40px;">
+<img src="https://static.wixstatic.com/media/28f7ce_bf9722a172e5411888572a81e594ea70~mv2.png">
+</div>
+
+<div id="pic2" style="position: absolute; top: 111px; left: 120px;">
+<img src="https://static.wixstatic.com/media/28f7ce_a9becc9f0cb84a36af0188a6d017b1b2~mv2.png">
+</div>
+
+<div id="pic3" style="position: absolute; top: 10px; left: 105px;">
+<img src="https://static.wixstatic.com/media/28f7ce_1c55289f4b9a4ee8990678be29b59b8f~mv2.png">
+</div>
+
+<div id="pic4" style="position: absolute; top: 200px; left: 125px;">
+<img src="https://static.wixstatic.com/media/28f7ce_cf57f2e8a75e467492d66dd9d303ef76~mv2.png"> 
+</div>      
+
+<div id="pic5" style="position: absolute; top: 70px; left: 130px;">
+<img src="https://static.wixstatic.com/media/28f7ce_f6852b2f4da94d35bbf91fb221e4b9d7~mv2.png">
+</div>
+
+<div id="pic6" style="position: absolute; top: 205px; left: 130px;">
+<img src="https://static.wixstatic.com/media/28f7ce_a3736ac4275949fe8282b9f0d5f89202~mv2.png">
+</div>
+
+<div id="pic7" style="position: absolute; top: 70px; left: 130px;">
+<img src="https://static.wixstatic.com/media/28f7ce_ce6f2b0fc6fc474c8e2026901ea6e15a~mv2.png">
+</div>
+
+<div id="pic8" style="position: absolute; top: 100px; left: 300px;">
+<img src="https://static.wixstatic.com/media/28f7ce_fd723c0dc2c14241a7c50927e9f7ac61~mv2.png">
+</div>
+
+<div id="pic9" style="position: absolute; top: 100px; left: 60px;">
+<img src="https://static.wixstatic.com/media/28f7ce_4cacdecf85f84bfbae5417b5c0335434~mv2.png">
+</div>
+
+<div id="pic10" style="position: absolute; top: 200px; left: 110px;">
+<img src="https://static.wixstatic.com/media/28f7ce_ccfed2607b814c1b9538fcad84639974~mv2.png">
+</div>
+
+<div id="pic11" style="position: absolute; top: 70px; left: 60px;">
+<img src="https://static.wixstatic.com/media/28f7ce_fa6000500c734697adc2e728a9d870cb~mv2.png">
+</div>
+
+
+</div>
+<script>
+
+
+document.getElementById("pic1").addEventListener("mousedown", mousedrag );
+document.getElementById("pic1").addEventListener("touchstart", touchdrag );
+document.getElementById("pic2").addEventListener("mousedown", mousedrag );
+document.getElementById("pic2").addEventListener("touchstart", touchdrag );
+document.getElementById("pic3").addEventListener("mousedown", mousedrag );
+document.getElementById("pic3").addEventListener("touchstart", touchdrag );
+document.getElementById("pic4").addEventListener("mousedown", mousedrag );
+document.getElementById("pic4").addEventListener("touchstart", touchdrag );
+document.getElementById("pic5").addEventListener("mousedown", mousedrag );
+document.getElementById("pic5").addEventListener("touchstart", touchdrag );
+document.getElementById("pic6").addEventListener("mousedown", mousedrag );
+document.getElementById("pic6").addEventListener("touchstart", touchdrag );
+document.getElementById("pic7").addEventListener("mousedown", mousedrag );
+document.getElementById("pic7").addEventListener("touchstart", touchdrag );
+document.getElementById("pic8").addEventListener("mousedown", mousedrag );
+document.getElementById("pic8").addEventListener("touchstart", touchdrag );
+document.getElementById("pic9").addEventListener("mousedown", mousedrag );
+document.getElementById("pic9").addEventListener("touchstart", touchdrag );
+document.getElementById("pic10").addEventListener("mousedown", mousedrag );
+document.getElementById("pic10").addEventListener("touchstart", touchdrag );
+document.getElementById("pic11").addEventListener("mousedown", mousedrag );
+document.getElementById("pic11").addEventListener("touchstart", touchdrag );
+
+
+function mousedrag(e) {
+    dragpic = document.getElementById(this.id)
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+   
+   function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    dragpic.style.top = (dragpic.offsetTop - pos2) + "px";
+    dragpic.style.left = (dragpic.offsetLeft - pos1) + "px";
+        
+  }
+}
+
+
+function touchdrag(e) {
+    dragpic = document.getElementById(this.id)
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.touches[0].clientX;
+    pos4 = e.touches[0].clientY;
+    document.ontouchend = closeDragElement;
+    document.ontouchmove = elementDragTouch;
+   
+   function elementDragTouch(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.touches[0].clientX;
+    pos2 = pos4 - e.touches[0].clientY;
+    pos3 = e.touches[0].clientX;
+    pos4 = e.touches[0].clientY;
+    // set the element's new position:
+    dragpic.style.top = (dragpic.offsetTop - pos2) + "px";
+    dragpic.style.left = (dragpic.offsetLeft - pos1) + "px";
+  }
+}
+
+function closeDragElement() {
+    document.onmouseup = null;
+    document.ontouchend = null;
+    document.onmousemove = null;
+    document.ontouchmove = null;
+}
+
+
+
+</script>
+
+
+
+</body></html>
