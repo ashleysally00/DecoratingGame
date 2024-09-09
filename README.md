@@ -1,5 +1,7 @@
 # Decorate Your Room Game
 
+### by Ashley Rice
+
 ## Overview
 
 This is an interactive web-based game where players can decorate a virtual room by arranging various pieces of furniture and decor, primarily comforters and pillows. The game offers a creative, open-ended experience without specific rules or win conditions.
