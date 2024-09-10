@@ -62,5 +62,14 @@ Contributions to improve the game are welcome. Please feel free to submit a pull
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/ashleysally00/DecoratingGame/blob/main/License) file for details.
 
+## License
+
+The code in this project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+Please note that the artwork, characters, and other creative assets in this game are not covered by the MIT License and are protected by copyright. If you are interested in using the artwork or assets, please contact me for permission at [ashleysally00@gmail.com].
+
+
+
+
 
 
