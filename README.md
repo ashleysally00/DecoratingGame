@@ -57,6 +57,10 @@ No additional setup or dependencies are required.
 
 Contributions to improve the game are welcome. Please feel free to submit a pull request or open an issue to discuss potential changes/additions.
 
+
 ## License
 
-[MIT License](LICENSE)
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/ashleysally00/DecoratingGame/blob/main/License) file for details.
+
+
+
