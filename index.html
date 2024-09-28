@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decorating Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Decorating Game!</h1>
+        <h4>Click and drag the pieces to redecorate your room!</h4>
+        <h4>by Ashley Rice</h4>
+    
+        <div id="game-container">
+            <div id="pic1" class="game-piece" style="top: 50px; left: 40px;">
+                <img src="images/piece_1.png" alt="Game piece 1">
+            </div>
+            <div id="pic2" class="game-piece" style="top: 111px; left: 120px;">
+                <img src="images/piece_2.png" alt="Game piece 2">
+            </div>
+            <div id="pic3" class="game-piece" style="top: 10px; left: 105px;">
+                <img src="images/piece_3.png" alt="Game piece 3">
+            </div>
+            <div id="pic4" class="game-piece" style="top: 200px; left: 125px;">
+                <img src="images/piece_4.png" alt="Game piece 4">
+            </div>
+            <div id="pic5" class="game-piece" style="top: 70px; left: 130px;">
+                <img src="images/piece_5.png" alt="Game piece 5">
+            </div>
+            <div id="pic6" class="game-piece" style="top: 205px; left: 130px;">
+                <img src="images/piece_6.png" alt="Game piece 6">
+            </div>
+            <div id="pic7" class="game-piece" style="top: 70px; left: 130px;">
+                <img src="images/piece_7.png" alt="Game piece 7">
+            </div>
+            <div id="pic8" class="game-piece" style="top: 100px; left: 300px;">
+                <img src="images/piece_8.png" alt="Game piece 8">
+            </div>
+            <div id="pic9" class="game-piece" style="top: 100px; left: 60px;">
+                <img src="images/piece_9.png" alt="Game piece 9">
+            </div>
+            <div id="pic10" class="game-piece" style="top: 200px; left: 110px;">
+                <img src="images/piece_10.png" alt="Game piece 10">
+            </div>
+            <div id="pic11" class="game-piece" style="top: 70px; left: 60px;">
+                <img src="images/piece_11.png" alt="Game piece 11">
+            </div>
+        </div>
+    </div>
+    <script>
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            elmnt.onmousedown = dragMouseDown;
+            elmnt.ontouchstart = dragTouchStart;
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function dragTouchStart(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.touches[0].clientX;
+                pos4 = e.touches[0].clientY;
+                document.ontouchend = closeDragElement;
+                document.ontouchmove = elementTouchDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function elementTouchDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.touches[0].clientX;
+                pos2 = pos4 - e.touches[0].clientY;
+                pos3 = e.touches[0].clientX;
+                pos4 = e.touches[0].clientY;
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+                document.ontouchend = null;
+                document.ontouchmove = null;
+            }
+        }
+
+        document.querySelectorAll('.game-piece').forEach(piece => {
+            dragElement(piece);
+        });
+    </script>
+</body>
+</html>
