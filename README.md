@@ -4,9 +4,7 @@
 
 ## Overview
 
-Welcome to the Decorating Game! Click the link below to play:
-
-[Play Decorating Game](https://ashleysally00.github.io/DecoratingGame/)
+Play the [Decorating Game](https://ashleysally00.github.io/DecoratingGame/) online here!
 
 ## About
 
